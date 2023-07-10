@@ -8,18 +8,31 @@
 //IF DIVIDE BY 0
 //PUT MATH ERROR
 
-//DEFINE ALL BUTTONS
-const clear = document.querySelector('.ac')
-const del = document.querySelector('.del')
-const percentage = document.querySelector('.percent')
-const equal = document.querySelector('.equal')
-const negative = document.querySelector('.negative')
+//STORE VALUE INTO MEMORY
+let expression = [];
+let memory = "";
+
+
+//DEFINE FUNCTIONS
+const clear = document.querySelector('.ac') //DELETES THE WHOLE EXPRESSION AND CLEARS CALCULATOR //CLEAR EXPRESSION, MEMORY
+const del = document.querySelector('.del') //DELETE THE LAST INPUT VALUE, REMOVES FROM ARRAY
+const equal = document.querySelector('.equal') //CONVERT ARRAY INTO STRING AND EVALUATE 
 
 //DEFINE OPERATORS
 const add = document.querySelector('.add')
 const sub = document.querySelector('.sub')
 const divide = document.querySelector('.divide')
 const mul = document.querySelector('.mul')
+
+const operators = [{ name: "add", operation: "+" }, { name: "sub", operation: "-" }, { name: "divide", operation: "/" }, { name: "mul", operation: "*" }]
+
+//DEFINE OTHER
+const decimal = document.querySelector('.decimal')
+const percentage = document.querySelector('.percent')
+const negative = document.querySelector('.negative')
+
+const other = [{ name: "decimal", operation: "%" }, { name: "percent", operation: "%" }, { name: "negative", operation: "-" }]
+
 
 //DEFINE VALUES
 const one = document.querySelector('.one')
@@ -33,8 +46,7 @@ const eight = document.querySelector('.eight')
 const nine = document.querySelector('.nine')
 const zero = document.querySelector('.zero')
 
-
-
-
+const values = [{ name: "one", value: 1 }, { name: "two", value: 2 }, { name: "three", value: 3 }, { name: "four", value: 4 }, { name: "five", value: 5 }, { name: "six", value: 6 },
+{ name: "seven", value: 7 }, { name: "eight", value: 8 }, { name: "nine", value: 9 }, { name: "zero", value: 0 },]
 
 //ADD EVENT LISTENERS TO EACH BUTTON
