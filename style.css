@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    margin: 0px;
+}
+
+.calculator,
+.answer,
+.operation {
+    border: 4px solid black;
+    border-radius: 20px;
+}
+
+button {
+    padding: 40px;
+}
+
+.calculator {
+    padding: 50px 30px;
+}
+
+.answer {
+    padding: 40px;
+}
+
+.operation {
+    padding: 20px;
+}
