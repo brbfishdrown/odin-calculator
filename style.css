@@ -26,6 +26,8 @@ body {
 .operation {
     background-color: white;
     height: 30px;
+    /*NEED TO FIGURE OUT HOW TO SET A MAXIMUM WIDTH INCASE THE NUMBERS GET TOO LONG*/
+    max-width: 418px;
     display: flex;
     justify-content: flex-end;
 }

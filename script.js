@@ -101,9 +101,51 @@ nine.addEventListener('click', () => {
     expression.push("9")
 })
 
+zero.addEventListener('click', () => {
+    operation.textContent += "0"
+    expression.push("0")
+})
+
 
 //CLEAR BUTTON
 clear.addEventListener('click', () => {
     operation.textContent = ""
     expression = [];
+})
+
+//EVENT LISTENERS FOR OPERATIONS
+add.addEventListener('click', () => {
+    operation.textContent += "  +  "
+    expression.push("+")
+})
+
+sub.addEventListener('click', () => {
+    operation.textContent += "  -  "
+    expression.push("-")
+})
+
+divide.addEventListener('click', () => {
+    operation.textContent += "  /  "
+    expression.push("/")
+})
+
+mul.addEventListener('click', () => {
+    operation.textContent += "  *  "
+    expression.push(" * ")
+})
+
+//EVENT LISTENERS FOR OTHER
+decimal.addEventListener('click', () => {
+    operation.textContent += "."
+    expression.push(".")
+})
+
+negative.addEventListener('click', () => {
+    operation.textContent += "-"
+    expression.push("-")
+})
+
+percentage.addEventListener('click', () => {
+    operation.textContent += "%"
+    expression.push("%")
 })
