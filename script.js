@@ -149,3 +149,12 @@ percentage.addEventListener('click', () => {
     operation.textContent += "%"
     expression.push("%")
 })
+<<<<<<< HEAD
+=======
+
+del.addEventListener('click', () => {
+    let removeLast = operation.textContent.replace(/.$/,'');;
+    operation.textContent = `${removeLast}`
+    expression.pop()
+})
+>>>>>>> delete
