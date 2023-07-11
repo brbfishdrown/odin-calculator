@@ -131,7 +131,7 @@ divide.addEventListener('click', () => {
 
 mul.addEventListener('click', () => {
     operation.textContent += "  *  "
-    expression.push(" * ")
+    expression.push("*")
 })
 
 //EVENT LISTENERS FOR OTHER
