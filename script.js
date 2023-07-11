@@ -49,4 +49,61 @@ const zero = document.querySelector('.zero')
 const values = [{ name: "one", value: 1 }, { name: "two", value: 2 }, { name: "three", value: 3 }, { name: "four", value: 4 }, { name: "five", value: 5 }, { name: "six", value: 6 },
 { name: "seven", value: 7 }, { name: "eight", value: 8 }, { name: "nine", value: 9 }, { name: "zero", value: 0 },]
 
-//ADD EVENT LISTENERS TO EACH BUTTON
+
+//DEFINE ANSWER AND OPERATION DISPLAY
+const answer = document.querySelector('.answer')
+const operation = document.querySelector('.operation')
+
+
+//EVENT LISTENERS FOR VALUES
+one.addEventListener('click', () => {
+    operation.textContent += "1"
+    expression.push("1")
+})
+
+two.addEventListener('click', () => {
+    operation.textContent += "2"
+    expression.push("3")
+})
+
+three.addEventListener('click', () => {
+    operation.textContent += "3"
+    expression.push("3")
+})
+
+four.addEventListener('click', () => {
+    operation.textContent += "4"
+    expression.push("4")
+})
+
+five.addEventListener('click', () => {
+    operation.textContent += "5"
+    expression.push("5")
+})
+
+six.addEventListener('click', () => {
+    operation.textContent += "6"
+    expression.push("6")
+})
+
+seven.addEventListener('click', () => {
+    operation.textContent += "7"
+    expression.push("7")
+})
+
+eight.addEventListener('click', () => {
+    operation.textContent += "8"
+    expression.push("8")
+})
+
+nine.addEventListener('click', () => {
+    operation.textContent += "9"
+    expression.push("9")
+})
+
+
+//CLEAR BUTTON
+clear.addEventListener('click', () => {
+    operation.textContent = ""
+    expression = [];
+})

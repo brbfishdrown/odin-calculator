@@ -25,6 +25,9 @@ body {
 .answer,
 .operation {
     background-color: white;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 
