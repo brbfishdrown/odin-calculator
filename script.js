@@ -45,3 +45,14 @@ const subButton = document.querySelector('.sub')
 const mulButton = document.querySelector('.mul')
 const divideButton = document.querySelector('.divide')
 
+function operator(type) {
+    //SHOW OPERATOR IN EXPRESSION DISPLAY
+    expressionDisplay.textContent += `  ${type}  `
+    //REPLACE CURR AND PREVIOUS VALUES
+    prevValue = currValue
+    currValue = ""
+    //PUSH PREVIOUS VALUE TO CURRENT EXPRESSION ARRAY
+    expression.push(`${prevValue}`)
+    //PUSH OPERATOR TYPE TO CURRENT EXPRESSION ARRAY
+    expression.push(`${type}`)
+}
