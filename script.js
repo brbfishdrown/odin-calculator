@@ -46,8 +46,6 @@ const mulButton = document.querySelector('.mul')
 const divideButton = document.querySelector('.divide')
 
 function operator(type) {
-    //SHOW OPERATOR IN EXPRESSION DISPLAY
-    expressionDisplay.textContent += `  ${type}  `
     //REPLACE CURR AND PREVIOUS VALUES
     prevValue = currValue
     currValue = ""
@@ -56,3 +54,24 @@ function operator(type) {
     //PUSH OPERATOR TYPE TO CURRENT EXPRESSION ARRAY
     expression.push(`${type}`)
 }
+
+//ADD EVENT LISTENERS TO OPERATORS
+addButton.addEventListener('click', () => {
+    operator(add)
+    expressionDisplay.textContent += " + "
+})
+
+subButton.addEventListener('click', () => {
+    operator(sub)
+    expressionDisplay.textContent += " - "
+})
+
+mulButton.addEventListener('click', () => {
+    operator(mul)
+    expressionDisplay.textContent += " * "
+})
+
+divideButton.addEventListener('click', () => {
+    operator(div)
+    expressionDisplay.textContent += " / "
+})
