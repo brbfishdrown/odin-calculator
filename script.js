@@ -38,3 +38,10 @@ seven.addEventListener('click', () => { value(7) })
 eight.addEventListener('click', () => { value(8) })
 nine.addEventListener('click', () => { value(9) })
 zero.addEventListener('click', () => { value(0) })
+
+//DEFINE OPERATORS
+const addButton = document.querySelector('.add')
+const subButton = document.querySelector('.sub')
+const mulButton = document.querySelector('.mul')
+const divideButton = document.querySelector('.divide')
+
