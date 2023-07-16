@@ -166,3 +166,13 @@ clearAllButton.addEventListener('click', () => {
     currValue = ""
     prevValue = ""
 })
+
+//DEFINE DELETE BUTTON
+const deleteButton = document.querySelector('.del')
+deleteButton.addEventListener('click', () => {
+    if (currValue == true) {
+        //REMOVE LAST VALUE FROM STRING
+        //REMOVE LAST VALUE FROM DISPLAY
+    } //ELSE
+    //REMOVE LAST SIGN FROM ARRAY
+})
