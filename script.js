@@ -80,7 +80,19 @@ divideButton.addEventListener('click', () => {
 const equalButton = document.querySelector('.equal')
 equalButton.addEventListener('click', () => {
     expression.push(`${currValue}`)
-    evaluate(expression)
+    let expressionLength = expression.length
+    while (expressionLength > 1) {
+        evaluate(expression)
+        expressionLength -= 2
+    }
+
+    //FOR CHECKING
+    console.log(expression)
+    //GET FIRST VALUE IN ARRAY ( SHOULD BE ONLY VALUE)
+    const finalAnswer = expression[0]
+    //DISPLAY FIRST VALUE IN ARRAY
+    answerDisplay.textContent += `${finalAnswer}`
+
 })
 
 //EVALUATE FUNCTIONS TO BE PUT INTO EQUAL BUTTON
@@ -124,7 +136,4 @@ function evaluate(expression) {
             expression.splice(addIndex - 1, 1)
         }
     }
-    console.log(expression)
-    const finalAnswer = expression[0]
-    answerDisplay.textContent += `${finalAnswer}`
 }
