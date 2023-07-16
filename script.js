@@ -170,13 +170,12 @@ clearAllButton.addEventListener('click', () => {
 //DEFINE DELETE BUTTON
 const deleteButton = document.querySelector('.del')
 deleteButton.addEventListener('click', () => {
-    if (currValue == true) {
-        //REMOVE LAST VALUE FROM STRING
-        //REMOVE LAST VALUE FROM DISPLAY
-    } //ELSE
+    //REMOVE LAST VALUE FROM STRING
+    //REMOVE LAST VALUE FROM DISPLAY
+    //ELSE
     //REMOVE LAST SIGN FROM ARRAY
+    let removeLast = expressionDisplay.textContent.replace(/.$/, '');;
+    expressionDisplay.textContent = `${removeLast}`
+    currValue.slice(0, -1)
+    expression.pop()
 })
-let removeLast = expressionDisplay.textContent.replace(/.$/, '');;
-expressionDisplay.textContent = `${removeLast}`
-currValue.slice(0, -1)
-expression.pop()
