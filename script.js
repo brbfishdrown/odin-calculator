@@ -76,8 +76,25 @@ divideButton.addEventListener('click', () => {
     expressionDisplay.textContent += " / "
 })
 
-//DEFINE EVALUATION
+//DEFINE EQUAL BUTTON
 const equalButton = document.querySelector('.equal')
 equalButton.addEventListener('click', () => {
     expression.push(`${currValue}`)
 })
+
+//EVALUATE FUNCTIONS TO BE PUT INTO EQUAL BUTTON
+function add(a, b) {
+    return a + b
+}
+
+function subtract(a, b) {
+    return a - b
+}
+
+function multiply(a, b) {
+    return a * b
+}
+
+function divide(a, b) {
+    return a / b
+}
