@@ -85,14 +85,12 @@ equalButton.addEventListener('click', () => {
         evaluate(expression)
         expressionLength -= 2
     }
-
     //FOR CHECKING
-    console.log(expression)
+    //console.log(expression)
     //GET FIRST VALUE IN ARRAY ( SHOULD BE ONLY VALUE)
     const finalAnswer = expression[0]
     //DISPLAY FIRST VALUE IN ARRAY
     answerDisplay.textContent += `${finalAnswer}`
-
 })
 
 //EVALUATE FUNCTIONS TO BE PUT INTO EQUAL BUTTON
@@ -124,34 +122,36 @@ function operate(a, b, operator) {
     return operator(a, b)
 }
 
+//CAN I IMPLEMENT ANOTHER FUNCTION FOR EACH SIGN?
 function evaluate(expression) {
     let answer
+    let signIndex
     for (const term of expression) {
         if (term == "+") {
             //TAKE TERMS BEFORE AND AFTER ADD
-            let addIndex = expression.indexOf(term)
-            answer = operate(expression[addIndex - 1], expression[addIndex + 1], add)
-            expression[addIndex] = `${answer}`
-            expression.splice(addIndex + 1, 1)
-            expression.splice(addIndex - 1, 1)
+            signIndex = expression.indexOf(term)
+            answer = operate(expression[signIndex - 1], expression[signIndex + 1], add)
+            expression[signIndex] = `${answer}`
+            expression.splice(signIndex + 1, 1)
+            expression.splice(signIndex - 1, 1)
         } else if (term == "-") {
-            let subIndex = expression.indexOf(term)
-            answer = operate(expression[subIndex - 1], expression[subIndex + 1], subtract)
-            expression[subIndex] = `${answer}`
-            expression.splice(subIndex + 1, 1)
-            expression.splice(subIndex - 1, 1)
+            signIndex = expression.indexOf(term)
+            answer = operate(expression[signIndex - 1], expression[signIndex + 1], subtract)
+            expression[signIndex] = `${answer}`
+            expression.splice(signIndex + 1, 1)
+            expression.splice(signIndex - 1, 1)
         } else if (term == "*") {
-            let mulIndex = expression.indexOf(term)
-            answer = operate(expression[mulIndex - 1], expression[mulIndex + 1], multiply)
-            expression[mulIndex] = `${answer}`
-            expression.splice(mulIndex + 1, 1)
-            expression.splice(mulIndex - 1, 1)
+            signIndex = expression.indexOf(term)
+            answer = operate(expression[signIndex - 1], expression[signIndex + 1], multiply)
+            expression[signIndex] = `${answer}`
+            expression.splice(signIndex + 1, 1)
+            expression.splice(signIndex - 1, 1)
         } else if (term == "/") {
-            let divIndex = expression.indexOf(term)
-            answer = operate(expression[divIndex - 1], expression[divIndex + 1], divide)
-            expression[divIndex] = `${answer}`
-            expression.splice(divIndex + 1, 1)
-            expression.splice(divIndex - 1, 1)
+            signIndex = expression.indexOf(term)
+            answer = operate(expression[signIndex - 1], expression[signIndex + 1], divide)
+            expression[signIndex] = `${answer}`
+            expression.splice(signIndex + 1, 1)
+            expression.splice(signIndex - 1, 1)
         }
     }
 }
