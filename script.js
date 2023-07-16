@@ -62,17 +62,17 @@ addButton.addEventListener('click', () => {
 })
 
 subButton.addEventListener('click', () => {
-    operator(sub)
+    operator("-")
     expressionDisplay.textContent += " - "
 })
 
 mulButton.addEventListener('click', () => {
-    operator(mul)
+    operator("*")
     expressionDisplay.textContent += " * "
 })
 
 divideButton.addEventListener('click', () => {
-    operator(div)
+    operator("/")
     expressionDisplay.textContent += " / "
 })
 
@@ -125,15 +125,33 @@ function operate(a, b, operator) {
 }
 
 function evaluate(expression) {
+    let answer
     for (const term of expression) {
         if (term == "+") {
             //TAKE TERMS BEFORE AND AFTER ADD
             let addIndex = expression.indexOf(term)
-            let answer
             answer = operate(expression[addIndex - 1], expression[addIndex + 1], add)
             expression[addIndex] = `${answer}`
             expression.splice(addIndex + 1, 1)
             expression.splice(addIndex - 1, 1)
+        } else if (term == "-") {
+            let subIndex = expression.indexOf(term)
+            answer = operate(expression[subIndex - 1], expression[subIndex + 1], subtract)
+            expression[subIndex] = `${answer}`
+            expression.splice(subIndex + 1, 1)
+            expression.splice(subIndex - 1, 1)
+        } else if (term == "*") {
+            let mulIndex = expression.indexOf(term)
+            answer = operate(expression[mulIndex - 1], expression[mulIndex + 1], multiply)
+            expression[mulIndex] = `${answer}`
+            expression.splice(mulIndex + 1, 1)
+            expression.splice(mulIndex - 1, 1)
+        } else if (term == "/") {
+            let divIndex = expression.indexOf(term)
+            answer = operate(expression[divIndex - 1], expression[divIndex + 1], divide)
+            expression[divIndex] = `${answer}`
+            expression.splice(divIndex + 1, 1)
+            expression.splice(divIndex - 1, 1)
         }
     }
 }
