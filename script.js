@@ -156,3 +156,13 @@ function removeSurrounding(signIndex) {
     expression.splice(signIndex + 1, 1)
     expression.splice(signIndex - 1, 1)
 }
+
+//DEFINE AC BUTTON
+const clearAllButton = document.querySelector('.ac')
+clearAllButton.addEventListener('click', () => {
+    answerDisplay.textContent = ""
+    expressionDisplay.textContent = ""
+    expression = []
+    currValue = ""
+    prevValue = ""
+})
