@@ -132,26 +132,27 @@ function evaluate(expression) {
             signIndex = expression.indexOf(term)
             answer = operate(expression[signIndex - 1], expression[signIndex + 1], add)
             expression[signIndex] = `${answer}`
-            expression.splice(signIndex + 1, 1)
-            expression.splice(signIndex - 1, 1)
+            removeSurrounding(signIndex)
         } else if (term == "-") {
             signIndex = expression.indexOf(term)
             answer = operate(expression[signIndex - 1], expression[signIndex + 1], subtract)
             expression[signIndex] = `${answer}`
-            expression.splice(signIndex + 1, 1)
-            expression.splice(signIndex - 1, 1)
+            removeSurrounding(signIndex)
         } else if (term == "*") {
             signIndex = expression.indexOf(term)
             answer = operate(expression[signIndex - 1], expression[signIndex + 1], multiply)
             expression[signIndex] = `${answer}`
-            expression.splice(signIndex + 1, 1)
-            expression.splice(signIndex - 1, 1)
+            removeSurrounding(signIndex)
         } else if (term == "/") {
             signIndex = expression.indexOf(term)
             answer = operate(expression[signIndex - 1], expression[signIndex + 1], divide)
             expression[signIndex] = `${answer}`
-            expression.splice(signIndex + 1, 1)
-            expression.splice(signIndex - 1, 1)
+            removeSurrounding(signIndex)
         }
     }
+}
+
+function removeSurrounding(signIndex) {
+    expression.splice(signIndex + 1, 1)
+    expression.splice(signIndex - 1, 1)
 }
