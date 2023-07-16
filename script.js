@@ -52,12 +52,12 @@ function operator(type) {
     //PUSH PREVIOUS VALUE TO CURRENT EXPRESSION ARRAY
     expression.push(`${prevValue}`)
     //PUSH OPERATOR TYPE TO CURRENT EXPRESSION ARRAY
-    expression.push(`${type}`)
+    expression.push(type)
 }
 
 //ADD EVENT LISTENERS TO OPERATORS
 addButton.addEventListener('click', () => {
-    operator(add)
+    operator("+")
     expressionDisplay.textContent += " + "
 })
 
@@ -80,25 +80,51 @@ divideButton.addEventListener('click', () => {
 const equalButton = document.querySelector('.equal')
 equalButton.addEventListener('click', () => {
     expression.push(`${currValue}`)
+    evaluate(expression)
 })
 
 //EVALUATE FUNCTIONS TO BE PUT INTO EQUAL BUTTON
 function add(a, b) {
+    a = Number(a)
+    b = Number(b)
     return a + b
 }
 
 function subtract(a, b) {
+    a = Number(a)
+    b = Number(b)
     return a - b
 }
 
 function multiply(a, b) {
+    a = Number(a)
+    b = Number(b)
     return a * b
 }
 
 function divide(a, b) {
+    a = Number(a)
+    b = Number(b)
     return a / b
 }
 
 function operate(a, b, operator) {
     return operator(a, b)
+}
+
+function evaluate(expression) {
+    for (const term of expression) {
+        if (term == "+") {
+            //TAKE TERMS BEFORE AND AFTER ADD
+            let addIndex = expression.indexOf(term)
+            let answer
+            answer = operate(expression[addIndex - 1], expression[addIndex + 1], add)
+            expression[addIndex] = `${answer}`
+            expression.splice(addIndex + 1, 1)
+            expression.splice(addIndex - 1, 1)
+        }
+    }
+    console.log(expression)
+    const finalAnswer = expression[0]
+    answerDisplay.textContent += `${finalAnswer}`
 }

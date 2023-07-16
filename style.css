@@ -9,7 +9,7 @@ body {
 
 .calculator,
 .answer,
-.operation {
+.expression {
     border: 4px solid black;
     border-radius: 20px;
 }
@@ -23,7 +23,7 @@ body {
 }
 
 .answer,
-.operation {
+.expression {
     background-color: white;
     height: 30px;
     /*NEED TO FIGURE OUT HOW TO SET A MAXIMUM WIDTH INCASE THE NUMBERS GET TOO LONG*/
@@ -37,7 +37,7 @@ body {
     padding: 40px;
 }
 
-.operation {
+.expression {
     padding: 20px;
 }
 
