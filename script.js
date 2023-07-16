@@ -176,3 +176,7 @@ deleteButton.addEventListener('click', () => {
     } //ELSE
     //REMOVE LAST SIGN FROM ARRAY
 })
+let removeLast = expressionDisplay.textContent.replace(/.$/, '');;
+expressionDisplay.textContent = `${removeLast}`
+currValue.slice(0, -1)
+expression.pop()
